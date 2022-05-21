@@ -28,6 +28,7 @@
     .font-radio {
       border-style: solid;
       border-width: 1px;
+      border-color: aliceblue;
     }
 
     #demo > * {
@@ -44,6 +45,7 @@
 
     #text-input {
       width: 100%;
+      background-color: aliceblue;
     }
   </style>
   <script>
@@ -194,10 +196,14 @@
           <tr>
             <th><b>Font name</b></th>
             <td id="prop-font-name"></td>
+            <th><b>Baseline</b></th>
+            <td id="prop-baseline"></td>
           </tr>
           <tr>
             <th><b>Font family</b></th>
             <td id="prop-font-family"></td>
+            <th><b>Mean line</b></th>
+            <td id="prop-mean-line"></td>
           </tr>
           <tr>
                 <th><b>Glyph count</b></th>
@@ -223,6 +229,7 @@
             <th><b>Max glyph width</b></th>
             <td id="prop-max-glyph-width"></td>
           </tr>
+
           <tr>
             <th><b>Baseline</b></th>
             <td id="prop-baseline"></td>
