@@ -96,7 +96,7 @@
         const propMap = {
           "prop-font-name": "name",
           "prop-font-family": "family",
-          // 'prop-glyph-count': 'glyphCount',
+          "prop-glyph-count": "glyphCount",
           "prop-glyph-width": "glyphWidth",
           "prop-glyph-height": "glyphHeight",
           "prop-glyph-spacing": "glyphSpacing",
@@ -124,7 +124,12 @@
             updateFontInfoTable(font);
           } else {
             cursedDemo.innerHTML = '';
-            cursedDemo.appendChild(currentFont.getTextAsHTML('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac auctor augue mauris augue neque gravida in. Ut tellus elementum sagittis vitae et leo. Eget lorem dolor sed viverra ipsum nunc. Augue neque gravida in fermentum et sollicitudin ac orci. Viverra tellus in hac habitasse platea dictumst vestibulum. Iaculis at erat pellentesque adipiscing commodo elit. Nibh tellus molestie nunc non. Id interdum velit laoreet id donec. Id neque aliquam vestibulum morbi blandit cursus. At quis risus sed vulputate. At augue eget arcu dictum varius duis at consectetur lorem. Vulputate sapien nec sagittis aliquam. Elementum tempus egestas sed sed risus pretium. Enim sit amet venenatis urna cursus eget. Purus viverra accumsan in nisl nisi. Risus feugiat in ante metus. Dignissim sodales ut eu sem integer vitae justo. Blandit massa enim nec dui nunc mattis enim. Nec feugiat nisl pretium fusce id velit ut. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Nulla aliquet enim tortor at auctor urna nunc. Platea dictumst quisque sagittis purus sit amet volutpat. In arcu cursus euismod quis viverra. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Elementum nibh tellus molestie nunc non blandit massa enim. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Semper eget duis at tellus at. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Magnis dis parturient montes nascetur ridiculus. Urna et pharetra pharetra massa massa. Aliquam sem et tortor consequat id porta nibh. Sagittis nisl rhoncus mattis rhoncus urna neque. Magna ac placerat vestibulum lectus mauris ultrices eros. Erat velit scelerisque in dictum non consectetur. Id diam vel quam elementum pulvinar etiam non quam. Quam vulputate dignissim suspendisse in est. Posuere sollicitudin aliquam ultrices sagittis orci. Vitae semper quis lectus nulla at volutpat diam. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Sed turpis tincidunt id aliquet risus. Magna eget est lorem ipsum dolor sit. Elementum pulvinar etiam non quam lacus suspendisse. Mattis molestie a iaculis at. Neque convallis a cras semper auctor neque vitae tempus. Morbi tristique senectus et netus et.'))
+            cursedDemo.appendChild(currentFont.getTextAsHTML('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac auctor augue mauris augue neque gravida in. Ut tellus elementum sagittis vitae et leo. Eget lorem dolor sed viverra ipsum nunc. Augue neque gravida in fermentum et sollicitudin ac orci. Viverra tellus in hac habitasse platea dictumst vestibulum. Iaculis at erat pellentesque adipiscing commodo elit. Nibh tellus molestie nunc non. Id interdum velit laoreet id donec. Id neque aliquam vestibulum morbi blandit cursus. At quis risus sed vulputate. At augue eget arcu dictum varius duis at consectetur lorem. Vulputate sapien nec sagittis aliquam. Elementum tempus egestas sed sed risus pretium. Enim sit amet venenatis urna cursus eget. Purus viverra accumsan in nisl nisi. Risus feugiat in ante metus. Dignissim sodales ut eu sem integer vitae justo. Blandit massa enim nec dui nunc mattis enim. Nec feugiat nisl pretium fusce id velit ut. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Nulla aliquet enim tortor at auctor urna nunc. Platea dictumst quisque sagittis purus sit amet volutpat. In arcu cursus euismod quis viverra. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum. Elementum nibh tellus molestie nunc non blandit massa enim.'),
+		currentFont.getTextAsHTML('┌─┬┐  ╔═╦╗  ╓─╥╖  ╒═╤╕  ╭─┬╮  ┏━┳┓  ┎─┰┒  ┍━┯┑  ╃─┬╄  ╆━┳╅'),
+		currentFont.getTextAsHTML('│ ││  ║ ║║  ║ ║║  │ ││  │ ││  ┃ ┃┃  ┃ ┃┃  │ ││  │ ││  ┃ ┃┃'),
+		currentFont.getTextAsHTML('├─┼┤  ╠═╬╣  ╟─╫╢  ╞═╪╡  ├─┼┤  ┣━╋┫  ┠─╂┨  ┝━┿┥  ├─┼┤  ┣━╋┫'),
+		currentFont.getTextAsHTML('└─┴┘  ╚═╩╝  ╙─╨╜  ╘═╧╛  ╰─┴╯  ┗━┻┛  ┖─┸┚  ┕━┷┙  ╅─┴╆  ╄━┻╃ ')
+	    )
           }
         });
       };
@@ -168,12 +173,12 @@
   </script>
 </head>
 <body>
-  <h1>Try out a SerenityOS font!</h1>
-  <div style="display: flex; flex-direction: column;">
+  <h1>SerenityOS font demo</h1>
+  <div style="display: flex; flex-direction: row;">
     <div id="font-selection"></div>
     <div id="demo" style="display: none">
       <label for="text-input">Your text:</label>
-      <input id="text-input" type="text" value="Well, hello friends!" />
+      <input id="text-input" type="text" value="Well, Hello Friends!" />
       <label for="text-color">Text color:</label>
       <input type="color" id="text-color" value="#000000">
       <div id="result">
