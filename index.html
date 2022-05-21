@@ -15,14 +15,12 @@
       margin-bottom: 35px;
       border-style: solid;
       border-width: 1px;
-      border-color: aliceblue;
       background-color: aliceblue;
     }
 
     #cursed-demo {
       border-style: solid;
       border-width: 1px;
-      border-color: aliceblue;
       background-color: aliceblue;
     }
 
@@ -31,12 +29,13 @@
     }
 
     td {
-      margin-bottom: 14px;
+      margin-bottom: 24px;
     }
 
     #font-info {
       padding: 3px;
       background-color: aliceblue;
+      width: 20%;
     }
 
     #font-info,
@@ -199,13 +198,13 @@
   <div style="display: flex; flex-direction: column;">
     <div id="font-selection"></div>
     <div id="demo" style="display: none">
+      <div id="result">
+        <canvas width="0" height="0" id="preview-canvas"></canvas>
+      </div>
       <label for="text-input">Your text:</label>
       <input id="text-input" type="text" value="Well, Hello Friends!" />
       <label for="text-color">Text color:</label>
       <input type="color" id="text-color" value="#000000">
-      <div id="result">
-        <canvas width="0" height="0" id="preview-canvas"></canvas>
-      </div>
       <div>
         <table id="font-info">
           <tr>
@@ -272,9 +271,6 @@
       </div>
     </div>
   </div>
-  <div id="cursed-demo">
-      <hr>
-      <a href="index.html">Home</a>
-    </div>
+  <div id="cursed-demo"></div>
 </body>
 </html>
