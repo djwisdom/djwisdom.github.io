@@ -19,9 +19,20 @@
       background-color: aliceblue;
     }
 
+    #cursed-demo {
+      margin-bottom: 35px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: aliceblue;
+      background-color: aliceblue;
+    }
+
     th,td {
       text-align: center;
-      padding-right: 6px;
+    }
+
+    td {
+      margin-bottom: 14px;
     }
 
     #font-info {
@@ -187,6 +198,9 @@
 <body>
   <h1>SerenityOS font demo</h1>
   <div style="display: flex; flex-direction: column;">
+    <div style="width: 100%; font-size: 20px;">
+      <a href="?cursed=1">Lorem ipsum + Boxes</a>
+    </div>
     <div id="font-selection"></div>
     <div id="demo" style="display: none">
       <label for="text-input">Your text:</label>
