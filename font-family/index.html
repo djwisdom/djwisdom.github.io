@@ -65,6 +65,56 @@
       border-color: aliceblue;
       background-color: aliceblue;
     }
+
+    *,
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: aliceblue;
+    }
+
+    nav {
+      height: 100vh;
+      width: 70vw;
+      min-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: auto;
+    }
+
+    a {
+      position: relative;
+      text-decoration: none;
+      font-family: sans-serif;
+      color: #a0a0a0;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    a:after {
+      content: "";
+      position: absolute;
+      background-color: #ff3c78;
+      height: 3px
+      width: 100%
+      left: 0;
+      bottom: -10px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #000000;
+    }
+
+    a:hover:after {
+      width: 100%
+    }
   </style>
   <script>
     const FONT_LIST = [
@@ -200,6 +250,11 @@
 <body>
   <h1>Fonts Demo Page</h1>
   <a href="index.html">Home</a>&nbsp;&middot;&nbsp;<a href="?cursed=1">Lorem ipsum + Boxes</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="?cursed=1">Auto-generated text</a>
+    <a href="#">About</a>
+  </nav>
   <hr>
   This site shows Official and Unoffical SerenityOS fonts made by me. Thanks to @MacDue for his <a href="https://github.com/MacDue/LibFont.js">LibFont.js</a> javascript implementation of SerenityOS bitmap fonts. Enjoy your stay.
   <hr>
