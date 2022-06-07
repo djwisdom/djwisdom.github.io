@@ -252,12 +252,20 @@ const LibFont = (() => {
       return this.glyphOrEmojiWidthForVariableWidthFont(codepoint);
     }
 
-    glyph = (codepoint) => {
-      const index = this.glyphIndexWithReplacement(codepoint);
+    glyphAt = (index) => {
       const width = this.glyphWidths.at(index);
       return new Glyph(
         new GlyphBitmap(this.rows, index * this.glyphHeight, width, this.glyphHeight),
         0, width, this.glyphWidth)
+    }
+
+    glyphWidthAt = (index) => {
+      return this.glyphWidths.at(index);
+    }
+
+    glyph = (codepoint) => {
+      const index = this.glyphIndexWithReplacement(codepoint);
+      return this.glyphAt(index);
     }
 
     containsGlyph = (codepoint) => {
@@ -313,6 +321,22 @@ const LibFont = (() => {
       }
     }
 
+    forEachFontGlyph = (callback) => {
+      for (let i = 0; i < this.glyphCount; i++) {
+        if (this.glyphWidthAt(i)) {
+          callback(this.glyphAt(i), i);
+        }
+      }
+    }
+
+    accurateGlyphCount = () => {
+      let accurateCount = 0;
+      this.forEachFontGlyph(() => {
+        ++accurateCount
+      })
+      return accurateCount;
+    }
+
     drawTextInto = (canvasCtx, drawX, drawY, text) => {
       let x = 0;
       this.forEachGlyph(text, (glyph, _, codepoint) => {
@@ -340,10 +364,21 @@ const LibFont = (() => {
     getTextAsHTML = (text, fillStyle = 'black') => {
       const htmlGlyphMap = {};
       const container = document.createElement("div");
+      container.style.lineHeight = `${this.glyphHeight + 4}px`;
       text.split(/(\S+\s+)/).map(token => {
-        const tokenContainer = document.createElement("span");
-        tokenContainer.style.display = "inline-block";
+        const makeContainer = () => {
+          const container = document.createElement("span");
+          container.style.display = "inline-block";
+          return container;
+        }
+        let tokenContainer = makeContainer();
         this.forEachGlyph(token, (glyph, character, codepoint) => {
+          if (character == '\n') {
+            container.appendChild(tokenContainer);
+            container.appendChild(document.createElement('br'));
+            tokenContainer = makeContainer();
+            return;
+          }
           if (character == ' ')
             character = '\xa0';
           let htmlGlyph = htmlGlyphMap[character]?.cloneNode(true);
@@ -371,3 +406,7 @@ const LibFont = (() => {
 
   return { ByteSpan, BitmapFont, Glyph, GlyphBitmap }
 })()
+
+if (module) {
+  module.exports = LibFont;
+}
